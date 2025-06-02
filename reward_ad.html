@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rewarded Ad</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: transparent; }
+    #yandex_reward_ad { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="yandex_reward_ad"></div>
+
+  <script>
+    (function(w, d, n, s, t) {
+      w[n] = w[n] || [];
+      w[n].push(function() {
+        Ya.Context.AdvManager.render({
+          blockId: "R-M-15718554-1",
+          type: "rewarded",
+          renderTo: "yandex_reward_ad",
+          onRewarded: function() {
+            alert("🎉 Пользователь получил награду!");
+            // В приложении можно потом послать сигнал через JS bridge
+          }
+        });
+      });
+      t = d.getElementsByTagName("script")[0];
+      s = d.createElement("script");
+      s.type = "text/javascript";
+      s.src = "https://yandex.ru/ads/system/context.js";
+      s.async = true;
+      t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+  </script>
+</body>
+</html>
