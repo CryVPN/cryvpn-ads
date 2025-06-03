@@ -21,8 +21,7 @@
           type: "rewarded",
           renderTo: "yandex_reward_ad",
           onRewarded: function() {
-            alert("🎉 Пользователь получил награду!");
-            // В приложении можно потом послать сигнал через JS bridge
+            window.parent.postMessage(JSON.stringify({ reward: true }), "*");
           }
         });
       });
