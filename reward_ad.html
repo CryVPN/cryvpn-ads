@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rewarded Ad</title>
   <style>
-    html, body { margin: 0; padding: 0; background: transparent; }
-    #yandex_reward_ad { width: 100%; height: 100vh; }
+    html, body { margin: 0; padding: 0; background: transparent; height: 100%; }
+    #yandex_reward_ad { width: 100%; height: 100%; }
   </style>
 </head>
 <body>
-  <div id="yandex_reward_ad"></div>
+  <div id="yandex_reward_ad"></div> <!-- Здесь реклама -->
 
   <script>
     (function(w, d, n, s, t) {
       w[n] = w[n] || [];
       w[n].push(function() {
         Ya.Context.AdvManager.render({
-          blockId: "R-M-15718554-1",  // ← это ID блока рекламы
+          blockId: "R-M-15718554-1",  // твой рекламный блок
           type: "rewarded",
-          renderTo: "yandex_reward_ad",  // ← а это id HTML-элемента <div>
+          renderTo: "yandex_reward_ad", // контейнер в который вставится реклама
           onRewarded: function() {
             window.parent.postMessage(JSON.stringify({ reward: true }), "*");
           }
