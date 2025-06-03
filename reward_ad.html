@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yandex Fullscreen Ad</title>
+  <title>Yandex Fullscreen Ad Test</title>
   <style>
     html, body {
       margin: 0;
@@ -13,7 +13,6 @@
     }
   </style>
 
-  <!-- Yandex.RTB loader -->
   <script>
     window.yaContextCb = window.yaContextCb || [];
   </script>
@@ -24,7 +23,7 @@
   <script>
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
-        blockId: "R-A-15747345-1",
+        blockId: "R-A-673238-1", // Тестовый рекламный блок Яндекса
         type: "fullscreen",
         platform: "touch"
       });
