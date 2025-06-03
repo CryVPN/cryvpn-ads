@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yandex Fullscreen Ad</title>
+  <title>Yandex Test Ad</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 
@@ -19,11 +22,11 @@
 </head>
 <body>
 
-  <!-- Yandex.RTB R-A-15746841-1 -->
+  <!-- Yandex Test Ad -->
   <script>
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
-        blockId: "R-A-15746841-1",
+        blockId: "R-A-62089-1", // тестовый ID
         type: "fullscreen",
         platform: "touch"
       });
