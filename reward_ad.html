@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <!-- Код загрузчика (обязательно в <head>) -->
-    <script>window.yaContextCb=window.yaContextCb||[]</script>
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yandex Fullscreen Ad</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+    }
+  </style>
+
+  <!-- Yandex.RTB loader -->
+  <script>
+    window.yaContextCb = window.yaContextCb || [];
+  </script>
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
-<body style="margin: 0; padding: 0;">
-    <!-- Код рекламного блока (в <body>) -->
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "blockId": "R-A-15747345-1",
-                "type": "fullscreen",  // Полноэкранная реклама
-                "platform": "touch"    // Для мобильных устройств
-            })
-        })
-    </script>
+<body>
+
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-15747345-1",
+        type: "fullscreen",
+        platform: "touch"
+      });
+    });
+  </script>
+
 </body>
 </html>
